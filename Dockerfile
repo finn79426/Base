@@ -38,6 +38,7 @@ RUN add-apt-repository --yes ppa:apt-fast/stable \
 						npm \
 						default-jre \
 						default-jdk \
+						libc6-i386
 
 && pip install --upgrade virtualenv \
 
