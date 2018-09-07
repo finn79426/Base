@@ -31,16 +31,24 @@ RUN add-apt-repository --yes ppa:apt-fast/stable \
 						python-pip \
 						python3-pip \
 						python-dev \
-						libffi-dev \
 						build-essential \
 						virtualenvwrapper \
 						nodejs \
 						npm \
 						default-jre \
 						default-jdk \
-						libc6-i386
+						zsh \
+						autojump \
 
 && pip install --upgrade virtualenv \
+
+# Oh-My-Zsh Install
+&& sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+# zsh-syntax-highlighting Install
+&& git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ; source ~/.zshrc
+# Change to zsh
+&& chsh -s /bin/zsh
+
 
 && apt-fast -y install --fix-missing \
 && apt-fast -y autoremove \
