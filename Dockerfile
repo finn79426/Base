@@ -20,13 +20,26 @@ RUN add-apt-repository --yes ppa:apt-fast/stable \
 && apt-fast -y upgrade \
 && apt-fast -y dist-upgrade \
 
-&& apt-fast install -y python-pip python3-pip python-dev libffi-dev build-essential virtualenvwrapper \
+&& apt-fast install -y 	vim \
+						powerline \
+						git \
+						curl \
+						gdebi \
+						tmux \
+						cmake \
+						clipit \
+						python-pip \
+						python3-pip \
+						python-dev \
+						libffi-dev \
+						build-essential \
+						virtualenvwrapper \
+						nodejs \
+						npm \
+						default-jre \
+						default-jdk \
+
 && pip install --upgrade virtualenv \
-&& apt-fast install -y vim powerline \
-&& apt-fast install -y nodejs npm \
-&& apt-fast install -y default-jre default-jdk \
-&& apt-fast install -y git curl gdebi tmux cmake \
-&& apt-fast install -y clipit \ 
 
 && apt-fast -y install --fix-missing \
 && apt-fast -y autoremove \
